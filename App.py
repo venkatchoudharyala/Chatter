@@ -227,7 +227,7 @@ def ChatSelect(UserName, ChatFile, SelectedChat):
 			if(st.button("Confirm")):
 				os.remove("UserAcc/" + UserName + ".ua")
 				Page.main()
-    	st.sidebar.write("Developed at PingIt Labs, Contact us at @ISheriff Chat for any Queries & Reports over Toxic Users")
+	st.sidebar.write("Developed at PingIt Labs, Contact us at @ISheriff Chat for any Queries & Reports over Toxic Users")
 	try:
 		ChatBoxUpdater(UserName, ChatFile, SelectedChat)
 	except FileNotFoundError:
