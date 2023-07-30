@@ -50,7 +50,6 @@ def main():
 			st.session_state['LoginVal'] = False
 			st.experimental_rerun()
 	st.write("")
-	st.write("Made at Home Labs")
 
 def AccountDisplay(SelectedChat):
 	UserName = UserDetails["Name"]
@@ -99,6 +98,7 @@ def ChatBoxUpdater(UserName, ChatFile, SelectedChat):
 
 def ChatInp(UserName, ChatFile, SelectedChat):
 	Msg = st.chat_input("Say something")
+	st.write("Developed at PingIt Labs, Contact us at @ISheriff Chat")
 	if Msg:
 		#st.write(f"User has sent the following prompt: {Msg}")
 		UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat)
