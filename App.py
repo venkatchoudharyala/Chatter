@@ -13,9 +13,9 @@ hide_st_style = """
 		<style>
 		header {visibility: hidden;}
 		footer {visibility: hidden;}
-  		<div class = "css-cio0dv ea3mdgil">
-    			"Made at Home Labs"
-       		</div>
+		<div data-testid="AppViewBlockSpacer" class="css-qcqlej ea3mdgi3">
+  			"Made at Home Labs"
+    		</div>
 		</style>
 		"""
 
