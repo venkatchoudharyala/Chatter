@@ -15,12 +15,15 @@ hide_st_style = """
 		footer {visibility: hidden;}
 		</style>
 		"""
+<style>
 footer:after{
 	content:'Venky';
 	display:block;
 	position:relative;
 	color:tomato;
 }
+</style>
+
 st.markdown(hide_st_style, unsafe_allow_html = True)
 
 warnings.filterwarnings("ignore")
