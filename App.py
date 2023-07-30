@@ -49,6 +49,7 @@ def main():
 			st.session_state['page'] = "LoginPage"
 			st.session_state['LoginVal'] = False
 			st.experimental_rerun()
+	st.write("")
 	st.write("Made at Home Labs")
 
 def AccountDisplay(SelectedChat):
