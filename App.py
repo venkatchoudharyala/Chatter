@@ -182,7 +182,16 @@ def ChatSelect(UserName, ChatFile, SelectedChat):
 	global Mode
 	ChatInp(UserName, ChatFile, SelectedChat)
 	st.title("Chat Room")
-	with st.sidebar.expander("Misc Operations"):
+	with st.sidebar.expander("Privacy and Security Tags"):
+		if(st.checkbox("Your Password Hash")):
+			Framer = st.sidebar.empty()
+			path = "UserAcc/" + UserName + ".ua"
+			with open(path, "r") as file:
+				Account = json.load(file)
+			Passd = Account["Password"]
+			st.write("Your Password is Hashed and stored at our Data Server, No one from the Organization can access your Account!!")
+			if(st.button("Password Hash"))
+
 		if(st.checkbox("Chat Room's Key")):
 			KeyFrame = st.sidebar.empty()
 			st.write(f"Your Chats are e2e Encrypted with {SelectedChat}")
@@ -192,6 +201,8 @@ def ChatSelect(UserName, ChatFile, SelectedChat):
 					Account = json.load(file)
 				KeyFrame.write("Chats Room's Key")
 				KeyFrame.write(Account["Chats"][SelectedChat]["Key"])
+
+	with st.sidebar.expander("Misc Operations"):
 		if(st.checkbox("Block This Chat")):
 			st.write(f"After Blocking, {SelectedChat} can't chat with you until you Re-initiate NewChat")
 			if(st.button("Confirm Blocking")):
