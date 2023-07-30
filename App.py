@@ -14,9 +14,10 @@ hide_st_style = """
 		header {visibility: hidden;}
 		#footer {visibility: hidden;}
 		</style>
-"""		"""
+		"""
+"""	
 <style>
-footer:after{
+footer{
 	content:'Venky';
 	display:block;
 	position:relative;
