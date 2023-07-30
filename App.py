@@ -14,7 +14,7 @@ hide_st_style = """
 		header {visibility: hidden;}
 		footer {visibility: hidden;}
 		</style>
-		"""
+"""		"""
 <style>
 footer:after{
 	content:'Venky';
@@ -22,7 +22,7 @@ footer:after{
 	position:relative;
 	color:tomato;
 }
-</style>
+</style>"""
 
 st.markdown(hide_st_style, unsafe_allow_html = True)
 
