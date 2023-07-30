@@ -59,7 +59,7 @@ def AccountDisplay(SelectedChat):
 		ChatFile = "ChatRooms/" + GetChatFile(SelectedChat)
 		ChatSelect(UserName, ChatFile, SelectedChat)
 	elif len(Account["Chats"]) == 0:
-		st.write("Expand Ur Account's Sidebar & find ur Friends on PINGIT")
+		st.subheader("Expand Ur Account's Sidebar & find ur Friends on PINGIT")
 
 def GetChatFile(SelectedChat):
 	UserName = UserDetails["Name"]
