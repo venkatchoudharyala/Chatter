@@ -45,6 +45,9 @@ def main():
 			if Chats:
 				SelectedChat = st.sidebar.selectbox("Chats", list(Chats.keys()))
 				AccountDisplay(SelectedChat)
+			else:
+				st.subheader("Expand Ur Account's Sidebar & find ur Friends on PINGIT")
+				
 		except FileNotFoundError:
 			st.session_state['page'] = "LoginPage"
 			st.session_state['LoginVal'] = False
@@ -58,8 +61,6 @@ def AccountDisplay(SelectedChat):
 	if Account["Chats"]:
 		ChatFile = "ChatRooms/" + GetChatFile(SelectedChat)
 		ChatSelect(UserName, ChatFile, SelectedChat)
-	elif len(Account["Chats"]) == 0:
-		st.subheader("Expand Ur Account's Sidebar & find ur Friends on PINGIT")
 
 def GetChatFile(SelectedChat):
 	UserName = UserDetails["Name"]
