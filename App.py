@@ -12,7 +12,7 @@ st.set_page_config(initial_sidebar_state = "collapsed")
 hide_st_style = """
 		<style>
 		header {visibility: hidden;}
-		footer {visibility: hidden;}
+		#footer {visibility: hidden;}
 		</style>
 """		"""
 <style>
