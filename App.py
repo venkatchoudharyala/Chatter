@@ -190,7 +190,8 @@ def ChatSelect(UserName, ChatFile, SelectedChat):
 				Account = json.load(file)
 			Passd = Account["Password"]
 			st.write("Your Password is Hashed and stored at our Data Server, No one from the Organization can access your Account!!")
-			if(st.button("Password Hash"))
+			if(st.button("Password Hash")):
+				Framer.write(Passd)
 
 		if(st.checkbox("Chat Room's Key")):
 			KeyFrame = st.sidebar.empty()
