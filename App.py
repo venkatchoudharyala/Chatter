@@ -17,7 +17,7 @@ hide_st_style = """
 		"""
 """	
 <style>
-footer{
+footer:before{
 	content:'Venky';
 	display:block;
 	position:relative;
