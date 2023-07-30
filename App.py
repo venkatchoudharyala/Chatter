@@ -13,9 +13,6 @@ hide_st_style = """
 		<style>
 		header {visibility: hidden;}
 		footer {visibility: hidden;}
-		<div data-testid="AppViewBlockSpacer" class="css-qcqlej ea3mdgi3">
-  			"Made at Home Labs"
-    		</div>
 		</style>
 		"""
 
@@ -52,6 +49,7 @@ def main():
 			st.session_state['page'] = "LoginPage"
 			st.session_state['LoginVal'] = False
 			st.experimental_rerun()
+	st.write("Made at Home Labs")
 
 def AccountDisplay(SelectedChat):
 	UserName = UserDetails["Name"]
