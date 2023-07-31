@@ -13,6 +13,7 @@ hide_st_style = """
 		<style>
 		header {visibility: hidden;}
 		footer {visibility: hidden;}
+  		viewerbadge_link_qRIco.style.display = 'none';
 		</style>
 		"""
 
