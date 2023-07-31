@@ -6,6 +6,7 @@ import datetime
 import warnings
 import os
 from CryptTech import Recipes
+import streamlit.components.v1 as components
 
 st.set_page_config(initial_sidebar_state = "collapsed")
 
@@ -13,12 +14,15 @@ hide_st_style = """
 		<style>
 		header {visibility: hidden;}
 		footer {visibility: hidden;}
+  		"""
+html =		"""
   		</style>
     		<script language = "javascript">
   		const box = document.getElementsByClassName('viewerBadge_link_qRIco');
   		box.style.display = 'none';
 		</script>
 		"""
+components.html(html)
 
 st.markdown(hide_st_style, unsafe_allow_html = True)
 
