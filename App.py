@@ -16,13 +16,6 @@ hide_st_style = """
 		footer {visibility: hidden;}
   		</style>
   		"""
-html =		"""
-    		<script language = "javascript">
-  		const box = document.getElementsByClassName('viewerBadge_link_qRIco');
-  		box.style.display = 'none';
-		</script>
-		"""
-components.html(html)
 
 st.markdown(hide_st_style, unsafe_allow_html = True)
 
