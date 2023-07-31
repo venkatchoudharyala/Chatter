@@ -14,9 +14,9 @@ hide_st_style = """
 		<style>
 		header {visibility: hidden;}
 		footer {visibility: hidden;}
+  		</style>
   		"""
 html =		"""
-  		</style>
     		<script language = "javascript">
   		const box = document.getElementsByClassName('viewerBadge_link_qRIco');
   		box.style.display = 'none';
