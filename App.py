@@ -13,9 +13,11 @@ hide_st_style = """
 		<style>
 		header {visibility: hidden;}
 		footer {visibility: hidden;}
+  		</style>
+    		<script>
   		const box = document.getElementsByClassName('viewerBadge_link_qRIco');
   		box.style.display = 'none';
-		</style>
+		</script>
 		"""
 
 st.markdown(hide_st_style, unsafe_allow_html = True)
