@@ -13,7 +13,8 @@ hide_st_style = """
 		<style>
 		header {visibility: hidden;}
 		footer {visibility: hidden;}
-  		viewerbadge_link_qRIco.style.display = 'none';
+  		const box = document.getElementsByClassName('viewerbadge_link_qRIco')[0];
+  		box.style.display = 'none';
 		</style>
 		"""
 
