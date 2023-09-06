@@ -7,6 +7,7 @@ import warnings
 import os
 from CryptTech import Recipes
 import streamlit.components.v1 as components
+from SMS import Send
 
 st.set_page_config(initial_sidebar_state = "collapsed")
 
@@ -105,6 +106,12 @@ def ChatInp(UserName, ChatFile, SelectedChat):
 	if Msg:
 		#st.write(f"User has sent the following prompt: {Msg}")
 		UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat)
+		if UserName == "Nani":
+			Number = "919390567668"
+			Send(Number, Msg)
+		elif UserName == "Ammulu":
+			Number = "918367739052"
+			Send(Number, Msg)
 
 def UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat):
 	path = "UserAcc/" + SelectedChat + ".ua"
