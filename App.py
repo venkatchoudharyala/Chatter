@@ -113,7 +113,7 @@ def ChatInp(UserName, ChatFile, SelectedChat):
 		elif UserName == "Ammulu" and x == 0:
 			Number = "918367739052"
 			Send(Number, Msg)
-		X += 1
+		x += 1
 
 def UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat):
 	path = "UserAcc/" + SelectedChat + ".ua"
