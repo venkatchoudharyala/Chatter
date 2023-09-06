@@ -246,20 +246,24 @@ def ChatSelect(UserName, ChatFile, SelectedChat):
 	with st.sidebar.expander("Alerts"):
 		if UserName == "Nani":
 			Number = "919390567668"
-			if st.sidebar.button("Generate Alert"):
-				Msg = "Age Bet 25 - 50 Yrs? Check Your Eligibility for 2 Cr Term Insurance @ 1041/Mon"	
-				Send(Number, Msg)
-			if st.sidebar.button("Generate Meet Alert"):
-				Msg = "You are selected for the Gold Loan"
-				Send(Number, Msg)
+			if st.sidebar.checkbox("Regular Alert"):
+				if st.sidebar.button("Generate"):
+					Msg = "Age Bet 25 - 50 Yrs? Check Your Eligibility for 2 Cr Term Insurance @ 1041/Mon"	
+					Send(Number, Msg)
+			if st.sidebar.checkbox("Meet Alert")
+				if st.sidebar.button("Generate"):
+					Msg = "You are selected for the Gold Loan"
+					Send(Number, Msg)
 		elif UserName == "Ammulu":
 			Number = "918367739052"
-			if st.sidebar.button("Generate Alert"):
-				Msg = "Age Bet 25 - 50 Yrs? Check Your Eligibility for 2 Cr Term Insurance @ 1041/Mon"
-				Send(Number, Msg)
-			if st.sidebar.button("Generate Meet Alert"):
-				Msg = "You are Selected for the Gold Loan"
-				Send(Number, Msg)
+			if st.sidebar.checkbox("Regular Alert"):
+				if st.sidebar.button("Generate"):
+					Msg = "Age Bet 25 - 50 Yrs? Check Your Eligibility for 2 Cr Term Insurance @ 1041/Mon"	
+					Send(Number, Msg)
+			if st.sidebar.checkbox("Meet Alert")
+				if st.sidebar.button("Generate"):
+					Msg = "You are selected for the Gold Loan"
+					Send(Number, Msg)
 		else:
 			st.write("Under Development, Hosting Beta services for selected Users")
 
