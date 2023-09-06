@@ -257,11 +257,11 @@ def ChatSelect(UserName, ChatFile, SelectedChat):
 		elif UserName == "Ammulu":
 			Number = "918367739052"
 			if st.sidebar.checkbox("Regular Alert"):
-				if st.sidebar.button("Generate"):
+				if st.sidebar.button("Generate Regular"):
 					Msg = "Age Bet 25 - 50 Yrs? Check Your Eligibility for 2 Cr Term Insurance @ 1041/Mon"	
 					Send(Number, Msg)
 			if st.sidebar.checkbox("Meet Alert"):
-				if st.sidebar.button("Generate"):
+				if st.sidebar.button("Generate Meet"):
 					Msg = "You are selected for the Gold Loan"
 					Send(Number, Msg)
 		else:
