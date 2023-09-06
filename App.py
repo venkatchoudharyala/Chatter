@@ -101,9 +101,10 @@ def ChatBoxUpdater(UserName, ChatFile, SelectedChat):
 	#st.stop()
 
 def ChatInp(UserName, ChatFile, SelectedChat):
+	Msg = st.chat_input("Say something")
+	x = False
 	if UserName == "Nani" or UserName == "Ammulu":
 		x = st.checkbox("Send to Number")
-	Msg = st.chat_input("Say something")
 	#st.write("Developed at PingIt Labs, Contact us at @ISheriff Chat")
 	if Msg:
 		#st.write(f"User has sent the following prompt: {Msg}")
