@@ -101,19 +101,19 @@ def ChatBoxUpdater(UserName, ChatFile, SelectedChat):
 	#st.stop()
 
 def ChatInp(UserName, ChatFile, SelectedChat):
-	x = 0
+	if UserName == "Nani" or UserName == "Ammulu":
+		x = st.checkbox("Send to Number")
 	Msg = st.chat_input("Say something")
 	#st.write("Developed at PingIt Labs, Contact us at @ISheriff Chat")
 	if Msg:
 		#st.write(f"User has sent the following prompt: {Msg}")
 		UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat)
-		if UserName == "Nani" and x == 0:
+		if UserName == "Nani" and x:
 			Number = "919390567668"
 			Send(Number, Msg)
-		elif UserName == "Ammulu" and x == 0:
+		elif UserName == "Ammulu" and x:
 			Number = "918367739052"
 			Send(Number, Msg)
-		x += 1
 
 def UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat):
 	path = "UserAcc/" + SelectedChat + ".ua"
@@ -241,6 +241,16 @@ def ChatSelect(UserName, ChatFile, SelectedChat):
 
 	with st.sidebar.expander("Queries and Reports"):
 		st.write("Developed at PingIt Labs, Contact us at @ISheriff Chat for any Queries & Reports over Toxic Users")
+	if UserName == "Nani" and x == 0:
+		Number = "919390567668"
+		if st.button("Generate Alert"):
+			Msg = "Special offer!"	
+			Send(Number, Msg)
+	elif UserName == "Ammulu" and x == 0:
+		Number = "918367739052"
+		if st.button("Generate Alert"):
+			Msg = "Special offer!"
+			Send(Number, Msg)
 
 	try:
 		ChatBoxUpdater(UserName, ChatFile, SelectedChat)
