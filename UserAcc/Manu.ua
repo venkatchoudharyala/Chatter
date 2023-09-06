@@ -1,1 +1,0 @@
-{"Name": "Manu", "Chats": {"Satrupa": {"File": "Manu_Satrupa.msg", "Key": "9U55O8d5Cnva-ewQVqSsxNyUEu7eGysJ1Wl75GP2fbU="}, "test": {"File": "Manu_test.msg", "Key": "PM-4AywcU_1SCZJfSzwzQ04tmQmmWIJlLlA29mHn8Mc="}}, "Blocked": {"Manu": "1"}, "Password": "$2b$12$E31iYSf3yX572ylMf57A9ONRsxSsz2KMxJCb4gIaY/YPU3SUfKvom"}
