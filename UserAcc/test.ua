@@ -1,1 +1,0 @@
-{"Name": "test", "Chats": {"Manu": {"File": "Manu_test.msg", "Key": "PM-4AywcU_1SCZJfSzwzQ04tmQmmWIJlLlA29mHn8Mc="}}, "Blocked": {"test": "1"}, "Password": "$2b$12$T/nJiFBQERkffZebt/I6.eCGLIZKN8KT/87CpdUee865AeEjJVYj."}
