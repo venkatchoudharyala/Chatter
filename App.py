@@ -109,7 +109,7 @@ def ChatInp(UserName, ChatFile, SelectedChat):
 	if Msg:
 		#st.write(f"User has sent the following prompt: {Msg}")
 		UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat)
-		if UserName == "Nani" and x:
+		if UserName == "Baava" and x:
 			Number = "919390567668"
 			Send(Number, Msg)
 		elif UserName == "Ammulu" and x:
@@ -244,7 +244,7 @@ def ChatSelect(UserName, ChatFile, SelectedChat):
 		st.write("Developed at PingIt Labs, Contact us at @ISheriff Chat for any Queries & Reports over Toxic Users")
 
 	with st.sidebar.expander("Alerts"):
-		if UserName == "Nani":
+		if UserName == "Baava":
 			Number = "919390567668"
 			if st.sidebar.checkbox("Regular Alert"):
 				if st.sidebar.button("Generate Regular"):
