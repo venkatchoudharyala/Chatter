@@ -1,1 +1,0 @@
-{"Name": "Nani", "Chats": {"Ammulu": {"File": "Nani_Ammulu.msg", "Key": "8_faJ_kggkCuPROLEIxi-PD2_QLqVs-sEEfqhwZ_xf4="}}, "Blocked": {"Nani": "1"}, "Password": "$2b$12$LV71QDNBaH15J6BKtf55POVq3ieBKpwfaBF2Ur8EsEmHuSk85z6CK"}
