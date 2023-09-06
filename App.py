@@ -101,17 +101,19 @@ def ChatBoxUpdater(UserName, ChatFile, SelectedChat):
 	#st.stop()
 
 def ChatInp(UserName, ChatFile, SelectedChat):
+	x = 0
 	Msg = st.chat_input("Say something")
 	#st.write("Developed at PingIt Labs, Contact us at @ISheriff Chat")
 	if Msg:
 		#st.write(f"User has sent the following prompt: {Msg}")
 		UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat)
-		if UserName == "Nani":
+		if UserName == "Nani" and x == 0:
 			Number = "919390567668"
 			Send(Number, Msg)
-		elif UserName == "Ammulu":
+		elif UserName == "Ammulu" and x == 0:
 			Number = "918367739052"
 			Send(Number, Msg)
+		X += 1
 
 def UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat):
 	path = "UserAcc/" + SelectedChat + ".ua"
