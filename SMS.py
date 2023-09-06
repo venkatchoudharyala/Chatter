@@ -1,10 +1,10 @@
 import requests
 
-def Send(Msg):
+def Send(Number, Msg):
         servicePlanId = "cb4fdf231564494eb6b1b169a1e32112"
         apiToken = "d40a02ff64f0497294e479fd76ef2bde"
         sinchNumber = "447520662174"
-        toNumber = "+918367739052"
+        toNumber = Number
         url = "https://us.sms.api.sinch.com/xms/v1/" + servicePlanId + "/batches"
 
         payload = {
