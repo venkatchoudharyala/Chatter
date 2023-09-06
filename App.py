@@ -242,14 +242,14 @@ def ChatSelect(UserName, ChatFile, SelectedChat):
 
 	with st.sidebar.expander("Queries and Reports"):
 		st.write("Developed at PingIt Labs, Contact us at @ISheriff Chat for any Queries & Reports over Toxic Users")
-	if UserName == "Nani" and x == 0:
+	if UserName == "Nani":
 		Number = "919390567668"
-		if st.button("Generate Alert"):
+		if st.sidebar.button("Generate Alert"):
 			Msg = "Special offer!"	
 			Send(Number, Msg)
-	elif UserName == "Ammulu" and x == 0:
+	elif UserName == "Ammulu":
 		Number = "918367739052"
-		if st.button("Generate Alert"):
+		if st.sidebar.button("Generate Alert"):
 			Msg = "Special offer!"
 			Send(Number, Msg)
 
