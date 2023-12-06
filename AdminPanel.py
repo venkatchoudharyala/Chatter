@@ -1,5 +1,6 @@
 import streamlit as st
 import json
+import os
 
 st.set_page_config(initial_sidebar_state = "collapsed")
 
@@ -14,8 +15,10 @@ st.markdown(hide_st_style, unsafe_allow_html = True)
 
 def Scrapper():
   Form = st.form("Login")
+  dir = os.listdir("UserAcc")
+  MPath = st.selectbox("Users", dir)
   UserName = Form.text_input("User Name")
-  Path = "UserAcc/" + UserName.strip() + ".ua"
+  Path = "UserAcc/" + MPath
   if Form.form_submit_button("Submit"):
 	  try:
 		  with open(Path, "r") as File:
