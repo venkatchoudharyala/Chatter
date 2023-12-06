@@ -12,7 +12,7 @@ hide_st_style = """
 
 st.markdown(hide_st_style, unsafe_allow_html = True)
 
-def main():
+def Scrapper():
   Form = st.form("Login")
   UserName = Form.text_input("User Name")
   Path = "UserAcc/" + UserName.strip() + ".ua"
@@ -25,5 +25,3 @@ def main():
 	  except FileNotFoundError:
 		  st.write("User Not Found")
 
-if __name__ == "__main__":
-  main()
