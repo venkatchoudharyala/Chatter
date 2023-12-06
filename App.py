@@ -38,25 +38,26 @@ def main():
 	if st.session_state["LoginVal"]:
 		st.session_state['page'] = "MainRoom"
 		UserName = UserDetails["Name"]
-		if UserName == "Administrator":
+		if UserName == "Admin":
 			ap.Scrapper()
-		SearchStensil = st.sidebar.text_input("New Chat")
-		NewChat(SearchStensil, UserName)
-		path = "UserAcc/" + UserName + ".ua"
-		try:
-			with open(path, "r") as File:
-				Account = json.load(File)
-				Chats = Account["Chats"]
-			if Chats:
-				SelectedChat = st.sidebar.selectbox("Chats", list(Chats.keys()))
-				AccountDisplay(SelectedChat)
-			else:
-				st.subheader("Expand Ur Account's Sidebar & find ur Friends on PINGIT")
-				
-		except FileNotFoundError:
-			st.session_state['page'] = "LoginPage"
-			st.session_state['LoginVal'] = False
-			st.experimental_rerun()
+		else:
+			SearchStensil = st.sidebar.text_input("New Chat")
+			NewChat(SearchStensil, UserName)
+			path = "UserAcc/" + UserName + ".ua"
+			try:
+				with open(path, "r") as File:
+					Account = json.load(File)
+					Chats = Account["Chats"]
+				if Chats:
+					SelectedChat = st.sidebar.selectbox("Chats", list(Chats.keys()))
+					AccountDisplay(SelectedChat)
+				else:
+					st.subheader("Expand Ur Account's Sidebar & find ur Friends on PINGIT")
+					
+			except FileNotFoundError:
+				st.session_state['page'] = "LoginPage"
+				st.session_state['LoginVal'] = False
+				st.experimental_rerun()
 
 def AccountDisplay(SelectedChat):
 	UserName = UserDetails["Name"]
