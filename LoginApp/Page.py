@@ -31,8 +31,7 @@ def LoginPage():
 
 		try:
 			with open(UserPath, "r") as File:
-				UDetails = File.read()
-				Details = json.loads(UDetails)
+				Details = json.load(File)
 				RePassd = Details["Password"]
 				LoTimes = int(Details["NoLog"])
 
