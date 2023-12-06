@@ -1,1 +1,1 @@
-{"Name": "Baava", "Chats": {"Ammulu": {"File": "Baava_Ammulu.msg", "Key": "8_faJ_kggkCuPROLEIxi-PD2_QLqVs-sEEfqhwZ_xf4="}}, "Blocked": {"Baava": "1"}, "Password": "$2b$12$LV71QDNBaH15J6BKtf55POVq3ieBKpwfaBF2Ur8EsEmHuSk85z6CK"}
+{"Name": "Baava", "Chats": {"Ammulu": {"File": "Baava_Ammulu.msg", "Key": "8_faJ_kggkCuPROLEIxi-PD2_QLqVs-sEEfqhwZ_xf4="}}, "Blocked": {"Baava": "1"}, "Password": "$2b$12$LV71QDNBaH15J6BKtf55POVq3ieBKpwfaBF2Ur8EsEmHuSk85z6CK", "NoLog": "0"}
