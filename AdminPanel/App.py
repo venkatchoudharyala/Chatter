@@ -14,15 +14,16 @@ st.markdown(hide_st_style, unsafe_allow_html = True)
 
 def main():
   Form = st.form("Login")
-  UserAcc = Form.text_input("User Name")
+  UserName = Form.text_input("User Name")
   Path = "UserAcc/" + UserName.strip() + ".ua"
-  try:
-    with open(UserPath, "r") as File:
-      UDetails = File.read()
-      Details = json.loads(UDetails)
-      st.write(Details)
-  except FileNotFoundError:
-    st.write("User Not Found")
+  if Form.form_submit_button("Submit"):
+	  try:
+		  with open(UserPath, "r") as File:
+			  UDetails = File.read()
+			  Details = json.loads(UDetails)
+			  st.write(Details)
+	  except FileNotFoundError:
+		  st.write("User Not Found")
 
 if __name__ == "__main__":
   main()
