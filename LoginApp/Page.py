@@ -34,8 +34,13 @@ def LoginPage():
 				UDetails = File.read()
 				Details = json.loads(UDetails)
 				RePassd = Details["Password"]
+				LoTimes = int(Details["NoLog"])
 
 			if CheckPasswdHash(Passd.strip(), RePassd):
+				LoTimes += 1
+				Details["NoLog"] = str(LoTimes)
+				with open(UserPath, "r") as File:
+					json.dump(Details, File)
 				st.session_state["user"] = Details
 				st.write("Login Successful")
 				st.session_state['page'] = 'EmptyPage'
@@ -74,7 +79,7 @@ def SignUpPage():
 
 			except FileNotFoundError:
 
-				Details = {"Name":UserName.strip(),"Chats":{},"Blocked":{UserName.strip():"1"},"Password":HashPasswd(Passd.strip())}
+				Details = {"Name":UserName.strip(),"Chats":{},"Blocked":{UserName.strip():"1"},"Password":HashPasswd(Passd.strip()), "NoLog":"0"}
 				UDetails = json.dumps(Details)
 				Path = os.path.join("UserAcc", UserName.strip() + ".ua")
 				with open(Path, "w") as File:
