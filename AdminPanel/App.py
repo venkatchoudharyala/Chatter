@@ -18,7 +18,7 @@ def main():
   Path = "UserAcc/" + UserName.strip() + ".ua"
   if Form.form_submit_button("Submit"):
 	  try:
-		  with open(UserPath, "r") as File:
+		  with open(Path, "r") as File:
 			  UDetails = File.read()
 			  Details = json.loads(UDetails)
 			  st.write(Details)
