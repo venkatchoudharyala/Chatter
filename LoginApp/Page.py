@@ -3,6 +3,7 @@ import os
 import json
 import warnings
 import bcrypt
+import datetime
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -28,6 +29,7 @@ def LoginPage():
 
 	if InpForm.form_submit_button("Submit"):
 		UserPath = "UserAcc/" + UserName.strip() + ".ua"
+		time = datetime.datetime.now()
 
 		try:
 			with open(UserPath, "r") as File:
@@ -38,6 +40,7 @@ def LoginPage():
 			if CheckPasswdHash(Passd.strip(), RePassd):
 				LoTimes += 1
 				Details["NoLog"] = str(LoTimes)
+				Details["TimeStamps"].append(time)
 				with open(UserPath, "w") as File:
 					json.dump(Details, File)
 				st.session_state["user"] = Details
@@ -78,7 +81,7 @@ def SignUpPage():
 
 			except FileNotFoundError:
 
-				Details = {"Name":UserName.strip(),"Chats":{},"Blocked":{UserName.strip():"1"},"Password":HashPasswd(Passd.strip()), "NoLog":"0"}
+				Details = {"Name":UserName.strip(),"Chats":{},"Blocked":{UserName.strip():"1"},"Password":HashPasswd(Passd.strip()), "NoLog":"0", "TimeStamps":[]}
 				UDetails = json.dumps(Details)
 				Path = os.path.join("UserAcc", UserName.strip() + ".ua")
 				with open(Path, "w") as File:
