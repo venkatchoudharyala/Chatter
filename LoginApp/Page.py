@@ -4,6 +4,7 @@ import json
 import warnings
 import bcrypt
 import datetime
+import pytz
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -29,7 +30,7 @@ def LoginPage():
 
 	if InpForm.form_submit_button("Submit"):
 		UserPath = "UserAcc/" + UserName.strip() + ".ua"
-		time = datetime.datetime.now()
+		time = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
 
 		try:
 			with open(UserPath, "r") as File:
@@ -40,7 +41,7 @@ def LoginPage():
 			if CheckPasswdHash(Passd.strip(), RePassd):
 				LoTimes += 1
 				Details["NoLog"] = str(LoTimes)
-				Details["TimeStamps"].append(time)
+				Details["TimeStamps"].append(str(time))
 				with open(UserPath, "w") as File:
 					json.dump(Details, File)
 				st.session_state["user"] = Details
