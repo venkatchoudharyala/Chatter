@@ -39,7 +39,7 @@ def LoginPage():
 			if CheckPasswdHash(Passd.strip(), RePassd):
 				LoTimes += 1
 				Details["NoLog"] = str(LoTimes)
-				with open(UserPath, "r") as File:
+				with open(UserPath, "w") as File:
 					json.dump(Details, File)
 				st.session_state["user"] = Details
 				st.write("Login Successful")
