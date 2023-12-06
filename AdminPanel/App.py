@@ -14,7 +14,7 @@ st.markdown(hide_st_style, unsafe_allow_html = True)
 
 def main():
   Form = st.form("Login")
-  Form.text_input("User Name")
+  UserAcc = Form.text_input("User Name")
   Path = "UserAcc/" + UserName.strip() + ".ua"
   try:
     with open(UserPath, "r") as File:
