@@ -17,14 +17,15 @@ def Scrapper():
   Form = st.form("Login")
   dir = os.listdir("UserAcc")
   MPath = st.selectbox("Users", dir)
-  UserName = Form.text_input("User Name")
+  #UserName = Form.text_input("User Name")
   Path = "UserAcc/" + MPath
-  if Form.form_submit_button("Submit"):
-	  try:
-		  with open(Path, "r") as File:
-			  UDetails = File.read()
-			  Details = json.loads(UDetails)
-			  st.write(Details)
-	  except FileNotFoundError:
-		  st.write("User Not Found")
+  Rapo(Path)
+def Rapo(Path):
+  try:
+	  with open(Path, "r") as File:
+		  UDetails = File.read()
+		  Details = json.loads(UDetails)
+		  st.write(Details)
+  except FileNotFoundError:
+	  st.write("User Not Found")
 
