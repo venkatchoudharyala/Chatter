@@ -38,6 +38,8 @@ def main():
 	if st.session_state["LoginVal"]:
 		st.session_state['page'] = "MainRoom"
 		UserName = UserDetails["Name"]
+		if UserName == "Administrator":
+			ap.Scrapper()
 		SearchStensil = st.sidebar.text_input("New Chat")
 		NewChat(SearchStensil, UserName)
 		path = "UserAcc/" + UserName + ".ua"
