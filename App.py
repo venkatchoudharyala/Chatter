@@ -93,7 +93,7 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 	for key, value in Chat.items():
 		username = value["UNAME"]
 		message = value["MSG"]
-		TimeStamp = datetime.datetime.strptime(value["TimeStamp"], '%Y-%m-%d %H:%M:%S.%f+%z')
+		TimeStamp = datetime.datetime.strptime(value["TimeStamp"], '%Y-%m-%d %H:%M:%S.%f+%za:%zb')
 		message = Recipes.MessageDecrypt(message, Key)
 
 		Diff = TimeStamp - PreTimeStamp
