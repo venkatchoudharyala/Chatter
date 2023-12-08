@@ -94,7 +94,7 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 	PreTimeStamp = datetime.datetime(2003, 7, 4, 0, 15, 0)
 	msgCounter = 0
 	for key, value in Chat.items():
-		if seen == msgCounter - 1:
+		if seen + 1 == msgCounter:
 			st.write("----------------------")
 		msgCounter += 1
 		username = value["UNAME"]
