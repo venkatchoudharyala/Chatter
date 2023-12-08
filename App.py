@@ -97,10 +97,12 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 		message = Recipes.MessageDecrypt(message, Key)
 
 		Diff = TimeStamp - PreTimeStamp
-		Diff = (Diff.seconds) / 60
+		Diffe = (Diff.seconds) / 60
 
-		if Diff >= 1:
-			st.subheader(TimeStamp)
+		if Diff.days >= 1:
+			st.write(TimeStamp.)
+		if Diffe >= 1:
+			st.write(TimeStamp)
 		PreTimeStamp = TimeStamp
 
 		if username != UserName:
