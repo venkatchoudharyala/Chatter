@@ -93,7 +93,7 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 	for key, value in Chat.items():
 		username = value["UNAME"]
 		message = value["MSG"]
-		TimeStamp = value["TimeStamp"]
+		TimeStamp = datetime.strptime(value["TimeStamp"], '%y-%m-%d %H:%M:%S')
 		message = Recipes.MessageDecrypt(message, Key)
 
 		Diff = TimeStamp - PreTimeStamp
@@ -137,7 +137,7 @@ def UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat):
 	NewMsg = {
 		"UNAME": UserName,
 		"MSG": Recipes.MessageEncrypt(Msg, Key),
-		"TimeStamp": time
+		"TimeStamp": str(time)
 		}
 	Chat[str(len(Chat) + 1)] = NewMsg
 	with open(ChatFile, "w") as file:
