@@ -94,9 +94,6 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 	PreTimeStamp = datetime.datetime(2003, 7, 4, 0, 15, 0)
 	msgCounter = 0
 	for key, value in Chat.items():
-		if seen + 1 == msgCounter:
-			st.write("----------------------")
-		msgCounter += 1
 		username = value["UNAME"]
 		message = value["MSG"]
 		TimeStamp = datetime.datetime.strptime(value["TimeStamp"], '%Y-%m-%d %H:%M:%S.%f+05:30')
@@ -114,6 +111,9 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 		else:
 			with st.chat_message("assistant"):
 				st.markdown(message)
+		if seen == msgCounter:
+			st.write("Seen Till now")
+		msgCounter += 1
 
 def ChatBoxUpdater(UserName, ChatFile, SelectedChat):
 	ChatBox(UserName, ChatFile, SelectedChat)
