@@ -100,7 +100,7 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 		Diff = (Diff.seconds) / 60
 
 		if Diff >= 1:
-			st.write(TimeStamp)
+			st.subheader(TimeStamp)
 		PreTimeStamp = TimeStamp
 
 		if username != UserName:
