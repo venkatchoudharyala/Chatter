@@ -5,6 +5,8 @@ from LoginApp import Page
 import datetime
 import warnings
 import os
+import datetime
+import pytz
 from CryptTech import Recipes
 import streamlit.components.v1 as components
 from SMS import Send
@@ -86,10 +88,20 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 	#st.write(Key)
 	with open(ChatFile, "r") as File:
 		Chat = json.load(File)
+		
+	PreTimeStamp = datetime.datetime(2003, 7, 4, 0, 15, 0)
 	for key, value in Chat.items():
 		username = value["UNAME"]
 		message = value["MSG"]
+		TimeStamp = value["TimeStamp"]
 		message = Recipes.MessageDecrypt(message, Key)
+
+		Diff = TimeStamp - PreTimeStamp
+		Diff = (Diff.seconds) / 60
+
+		if Diff >= 1:
+			st.write(TimeStamp)
+		PreTimeStamp = TimeStamp
 
 		if username != UserName:
 			with st.chat_message("user"):
@@ -113,12 +125,6 @@ def ChatInp(UserName, ChatFile, SelectedChat):
 	if Msg:
 		#st.write(f"User has sent the following prompt: {Msg}")
 		UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat)
-		if UserName == "Baava" and x:
-			Number = "919390567668"
-			Send(Number, Msg)
-		elif UserName == "Ammulu" and x:
-			Number = "918367739052"
-			Send(Number, Msg)
 
 def UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat):
 	path = "UserAcc/" + SelectedChat + ".ua"
@@ -128,9 +134,12 @@ def UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat):
 	with open(ChatFile, "r") as file:
 		Chat = json.load(file)
 
+	time = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
+
 	NewMsg = {
 		"UNAME": UserName,
 		"MSG": Recipes.MessageEncrypt(Msg, Key)
+		"TimeStamp": time
 		}
 	Chat[str(len(Chat) + 1)] = NewMsg
 	with open(ChatFile, "w") as file:
@@ -248,28 +257,7 @@ def ChatSelect(UserName, ChatFile, SelectedChat):
 		st.write("Developed at PingIt Labs, Contact us at @ISheriff Chat for any Queries & Reports over Toxic Users")
 
 	with st.sidebar.expander("Alerts"):
-		if UserName == "Baava":
-			Number = "919390567668"
-			if st.sidebar.checkbox("Regular Alert"):
-				if st.sidebar.button("Generate Regular"):
-					Msg = "Age Bet 25 - 50 Yrs? Check Your Eligibility for 2 Cr Term Insurance @ 1041/Mon"	
-					Send(Number, Msg)
-			if st.sidebar.checkbox("Meet Alert"):
-				if st.sidebar.button("Generate Meet"):
-					Msg = "You are selected for the Gold Loan"
-					Send(Number, Msg)
-		elif UserName == "Ammulu":
-			Number = "918367739052"
-			if st.sidebar.checkbox("Regular Alert"):
-				if st.sidebar.button("Generate Regular"):
-					Msg = "Age Bet 25 - 50 Yrs? Check Your Eligibility for 2 Cr Term Insurance @ 1041/Mon"	
-					Send(Number, Msg)
-			if st.sidebar.checkbox("Meet Alert"):
-				if st.sidebar.button("Generate Meet"):
-					Msg = "You are selected for the Gold Loan"
-					Send(Number, Msg)
-		else:
-			st.write("Under Development, Hosting Beta services for selected Users")
+		st.write("Under Development, Hosting Beta services for selected Users")
 
 	try:
 		ChatBoxUpdater(UserName, ChatFile, SelectedChat)
