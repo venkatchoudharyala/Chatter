@@ -148,7 +148,7 @@ def UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat):
 	path = "UserAcc/" + UserName + ".ua"
 	with open(path, "r") as file:
 		Account = json.load(file)
-	Account["Chats"]["SelectedChat"]["seen"] += 1
+	Account["Chats"][SelectedChat]["seen"] += 1
 	with open(path, "w") as file:
 		json.dump(Account, file)
 		
