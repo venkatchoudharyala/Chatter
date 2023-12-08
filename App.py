@@ -138,7 +138,7 @@ def UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat):
 
 	NewMsg = {
 		"UNAME": UserName,
-		"MSG": Recipes.MessageEncrypt(Msg, Key)
+		"MSG": Recipes.MessageEncrypt(Msg, Key),
 		"TimeStamp": time
 		}
 	Chat[str(len(Chat) + 1)] = NewMsg
