@@ -81,11 +81,11 @@ def GetChatFile(SelectedChat):
 	return Chats[SelectedChat]["File"]
 
 def ChatBox(UserName, ChatFile, SelectedChat):
-	path = "UserAcc/" + SelectedChat + ".ua"
+	path = "UserAcc/" + UserName + ".ua"
 	with open(path, "r") as file:
 		Account = json.load(file)
-	Key = Account["Chats"][UserName]["Key"]
-	seen = Account["Chats"][UserName]["seen"]
+	Key = Account["Chats"][SelectedChat]["Key"]
+	seen = Account["Chats"][SelectedChat]["seen"]
 	
 	#st.write(Key)
 	with open(ChatFile, "r") as File:
