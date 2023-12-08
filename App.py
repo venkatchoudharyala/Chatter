@@ -85,23 +85,25 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 	with open(path, "r") as file:
 		Account = json.load(file)
 	Key = Account["Chats"][UserName]["Key"]
+	seen = Account["Chats"][UserName]["seen"]
+	
 	#st.write(Key)
 	with open(ChatFile, "r") as File:
 		Chat = json.load(File)
 		
 	PreTimeStamp = datetime.datetime(2003, 7, 4, 0, 15, 0)
+	msgCounter = 0
 	for key, value in Chat.items():
+		if seen == msgCounter - 1:
+			st.write("----------------------")
 		username = value["UNAME"]
 		message = value["MSG"]
 		TimeStamp = datetime.datetime.strptime(value["TimeStamp"], '%Y-%m-%d %H:%M:%S.%f+05:30')
 		message = Recipes.MessageDecrypt(message, Key)
 
 		Diff = TimeStamp - PreTimeStamp
-		Diffe = (Diff.seconds) / 60
-
-		if Diff.days >= 1:
-			st.write(TimeStamp.)
-		if Diffe >= 1:
+		Diff = (Diff.seconds) / 60
+		if Diff >= 1:
 			st.write(TimeStamp)
 		PreTimeStamp = TimeStamp
 
@@ -141,7 +143,15 @@ def UpdateChatRoom(Msg, UserName, ChatFile, SelectedChat):
 		"MSG": Recipes.MessageEncrypt(Msg, Key),
 		"TimeStamp": str(time)
 		}
-	Chat[str(len(Chat) + 1)] = NewMsg
+	Chat[len(Chat) + 1] = NewMsg
+
+	path = "UserAcc/" + UserName + ".ua"
+	with open(path, "r") as file:
+		Account = json.load(file)
+	Account["Chats"]["SelectedChat"]["seen"] += 1
+	with open(path, "w") as file:
+		json.dump(Account, file)
+		
 	with open(ChatFile, "w") as file:
 		json.dump(Chat, file)
 
@@ -318,6 +328,7 @@ def NewChat(SearchStensil,UserName):
 			ChatDict[UserName] = {}
 			ChatDict[UserName]["File"] = UserName + "_" + SearchStensil + ".msg"
 			ChatDict[UserName]["Key"] = Key
+			ChatDict[UserName]["seen"] = 0
 			with open(path, "w") as File:
 				json.dump(Account, File)
 
@@ -328,6 +339,7 @@ def NewChat(SearchStensil,UserName):
 			ChatDict[SearchStensil] = {}
 			ChatDict[SearchStensil]["File"] = UserName + "_" + SearchStensil + ".msg"
 			ChatDict[SearchStensil]["Key"] = Key
+			ChatDict[SearchStensil]["seen"] = 0
 			with open(path, "w") as File:
 				json.dump(Account, File)
 
