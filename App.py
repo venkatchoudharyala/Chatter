@@ -98,8 +98,8 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 	else:
 		nitco = True
 	for key, value in Chat.items():
-		if nitco and seen == msgCounter:
-			st.write("New Messages")
+		if nitco and seen == msgCounter - 1:
+			st.write("-----New Messages-----")
 		username = value["UNAME"]
 		message = value["MSG"]
 		TimeStamp = datetime.datetime.strptime(value["TimeStamp"], '%Y-%m-%d %H:%M:%S.%f+05:30')
