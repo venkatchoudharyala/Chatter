@@ -98,6 +98,7 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 	else:
 		nitco = True
 	for key, value in Chat.items():
+		msgCounter += 1
 		if nitco and seen == msgCounter:
 			st.write("New Messages")
 		username = value["UNAME"]
@@ -117,7 +118,7 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 		else:
 			with st.chat_message("assistant"):
 				st.markdown(message)
-		msgCounter += 1
+		#msgCounter += 1
 
 def ChatBoxUpdater(UserName, ChatFile, SelectedChat):
 	ChatBox(UserName, ChatFile, SelectedChat)
