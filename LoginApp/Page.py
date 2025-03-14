@@ -47,7 +47,7 @@ def LoginPage():
 				st.session_state["user"] = Details
 				st.write("Login Successful")
 				st.session_state['page'] = 'EmptyPage'
-				st.experimental_rerun()
+				st.rerun()
 				#st.stop()
 			elif(ExceptFlag == 0):
 				st.write("Invalid Password")
