@@ -58,7 +58,7 @@ def LoginPage():
 	st.write("New User ? Try Sigining up!!!")
 	if st.button("Signup"):
 		st.session_state['page'] = 'SignUpPage'
-		st.experimental_rerun()
+		st.rerun()
 
 #@st.cache_data(experimental_allow_widgets=True)
 def SignUpPage():
@@ -95,7 +95,7 @@ def SignUpPage():
 				st.session_state['page'] = 'LoginPage'
 				if st.button("Back to Login"):
 					#st.session_state['page'] = 'LoginPage'
-					st.experimental_rerun()
+					st.rerun()
 
 #@st.cache_data(experimental_allow_widgets=True)
 def EmptyPage():
