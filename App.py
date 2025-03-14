@@ -59,7 +59,7 @@ def main():
 			except FileNotFoundError:
 				st.session_state['page'] = "LoginPage"
 				st.session_state['LoginVal'] = False
-				st.experimental_rerun()
+				st.rerun()
 
 def AccountDisplay(SelectedChat):
 	UserName = UserDetails["Name"]
@@ -122,7 +122,7 @@ def ChatBox(UserName, ChatFile, SelectedChat):
 def ChatBoxUpdater(UserName, ChatFile, SelectedChat):
 	ChatBox(UserName, ChatFile, SelectedChat)
 	time.sleep(1)
-	st.experimental_rerun()
+	st.rerun()
 	#st.stop()
 
 def ChatInp(UserName, ChatFile, SelectedChat):
@@ -178,7 +178,7 @@ def Blocking(UserName, SelectedChat):
 	except FileNotFoundError:
 		DoNothing = 0
 	NewChat.clear()
-	st.experimental_rerun()
+	st.rerun()
 
 def DeleteChat(SelectedChat, UserName):
 	"""try:
@@ -306,7 +306,7 @@ def Unblocking(SearchStensil,UserName):
 		File.write("{}")
 	st.sidebar.write("UnBlocked Successfully!!")
 	#UserDetails = Account
-	st.experimental_rerun()
+	st.rerun()
 
 @st.cache_data
 def NewChat(SearchStensil,UserName):
